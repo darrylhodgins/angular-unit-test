@@ -20,12 +20,12 @@ describe('c1-simple', function () {
                 ]
             });
         });
-        it('should show the correct message in a paragraph', function (done) {
+        it('should show the correct message in a paragraph', function () {
             var fixture = TestBed.createComponent(SimpleComponent);
             fixture.detectChanges();
             var debug = fixture.debugElement.query(By.css('p'));
             var element = debug.nativeElement;
-            expect(element.textContent).toEqual('A simple component');
+            expect(element.textContent).toEqual('\"A simple component\"');
         });
     });
 });

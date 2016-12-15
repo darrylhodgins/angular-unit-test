@@ -32,7 +32,7 @@ describe('c1-simple', () => {
 			});
 		});
 
-		it('should show the correct message in a paragraph', (done) => {
+		it('should show the correct message in a paragraph', () => {
 			let fixture = TestBed.createComponent(SimpleComponent);
 
 			fixture.detectChanges();
@@ -41,7 +41,7 @@ describe('c1-simple', () => {
 
 			let element = debug.nativeElement as HTMLElement;
 
-			expect (element.textContent).toEqual('A simple component');
+			expect (element.textContent).toEqual('\"A simple component\"');
 
 		});
 	});

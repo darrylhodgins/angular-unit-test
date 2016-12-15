@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'c1-simple',
   template: `
-    <p>{{ getMessage() }}</p>
+    <p>"{{ getMessage() }}"</p>
   `
 })
 export class SimpleComponent {
