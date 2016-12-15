@@ -16,6 +16,7 @@ describe('user-list', () => {
 	});
 
 	beforeEach(() => {
+
 		TestBed.configureTestingModule({
 			imports: [
 				RouterTestingModule.withRoutes([]) // a placeholder to test
@@ -34,13 +35,24 @@ describe('user-list', () => {
 
 	describe('during init', () => {
 
-		it('should call the method getUserList from the UserService', () => {
+		it('should display the values from getUserList', () => {
 
 			let fixture = TestBed.createComponent(UserListComponent);
 
-			// fixture.detectChanges();
+			fixture.detectChanges();
 
+			let elem = fixture.debugElement.query(By.css('li:first-child a')).nativeElement as HTMLLIElement;
+			expect(elem.textContent).toEqual('Leanne Graham');
+		});
 
+		it('should call the method getUserList from the UserService', () => {
+			let fixture = TestBed.createComponent(UserListComponent);
+			let service: UserService = TestBed.get(UserService) as UserService; // like DI
+			spyOn(service, 'getUserList').and.callThrough();
+
+			fixture.detectChanges();
+
+			expect(service.getUserList).toHaveBeenCalled();
 		});
 	});
 
