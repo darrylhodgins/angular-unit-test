@@ -6,16 +6,21 @@ import 'rxjs/add/operator/map';
 import { User } from './user.model';
 
 @Injectable()
-export class UserService {
-  private baseUrl = 'https://jsonplaceholder.typicode.com/users';
+export class UserService implements UserServiceInterface {
+	private baseUrl = 'https://jsonplaceholder.typicode.com/users';
 
-  constructor(private http: Http) {}
+	constructor(private http: Http) {}
 
-  getUserList(): Observable<User[]> {
-    return this.http.get(this.baseUrl).map(users => users.json());
-  }
+	public getUserList(): Observable<User[]> {
+		return this.http.get(this.baseUrl).map(users => users.json());
+	}
 
-  getUser(id: number): Observable<User> {
-    return this.http.get(`${this.baseUrl}/${id}`).map(user => user.json());
-  }
+	public getUser(id: number): Observable<User> {
+		return this.http.get(`${this.baseUrl}/${id}`).map(user => user.json());
+	}
+}
+
+export interface UserServiceInterface {
+	getUserList(): Observable<User[]>;
+	getUser(id: number): Observable<User>;
 }
