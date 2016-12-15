@@ -3,12 +3,16 @@ import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { UserService } from '../shared/user.service';
 import { MockUserService } from '../shared/mock.user.service';
+import { RouterModule } from '@angular/router';
 describe('user-list', function () {
     beforeAll(function () {
         TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
     });
     beforeEach(function () {
         TestBed.configureTestingModule({
+            imports: [
+                RouterModule
+            ],
             declarations: [
                 UserListComponent
             ],
