@@ -8,29 +8,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
-var UserService = (function () {
-    function UserService(http) {
-        this.http = http;
-        this.baseUrl = 'https://jsonplaceholder.typicode.com/users';
+var MockHttp = (function () {
+    function MockHttp() {
     }
-    UserService.prototype.getUserList = function () {
-        return this.http.get(this.baseUrl).map(function (users) {
-            console.log('MAPPING A USERS', users);
-            return users.json();
-        });
+    MockHttp.prototype.get = function (url, options) {
+        return null;
     };
-    UserService.prototype.getUser = function (id) {
-        return this.http.get(this.baseUrl + "/" + id).map(function (user) {
-            console.log('MAPPING A USER', user);
-            return user.json();
-        });
-    };
-    return UserService;
+    return MockHttp;
 }());
-UserService = __decorate([
+MockHttp = __decorate([
     Injectable(),
-    __metadata("design:paramtypes", [Http])
-], UserService);
-export { UserService };
+    __metadata("design:paramtypes", [])
+], MockHttp);
+export { MockHttp };

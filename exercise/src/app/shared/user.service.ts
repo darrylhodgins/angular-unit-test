@@ -12,11 +12,17 @@ export class UserService implements UserServiceInterface {
 	constructor(private http: Http) {}
 
 	public getUserList(): Observable<User[]> {
-		return this.http.get(this.baseUrl).map(users => users.json());
+		return this.http.get(this.baseUrl).map((users) => {
+			console.log('MAPPING A USERS', users);
+			return users.json();
+		});
 	}
 
 	public getUser(id: number): Observable<User> {
-		return this.http.get(`${this.baseUrl}/${id}`).map(user => user.json());
+		return this.http.get(`${this.baseUrl}/${id}`).map((user) => {
+			console.log('MAPPING A USER', user);
+			return user.json();
+		});
 	}
 }
 

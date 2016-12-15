@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
-var _fakeUserList = [
+export var fakeUserList = [
     {
         id: 1,
         name: 'Leanne Graham',
@@ -32,10 +32,10 @@ var MockUserService = (function () {
     function MockUserService() {
     }
     MockUserService.prototype.getUserList = function () {
-        return Observable.of(_fakeUserList);
+        return Observable.of(fakeUserList);
     };
     MockUserService.prototype.getUser = function (id) {
-        return Observable.of(_fakeUserList[0]);
+        return Observable.of(fakeUserList[0]);
     };
     return MockUserService;
 }());

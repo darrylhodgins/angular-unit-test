@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 import { User } from './user.model';
 
-const _fakeUserList: any[] = [
+export const fakeUserList: any[] = [
 	{
 		id: 1,
 		name: 'Leanne Graham',
@@ -28,10 +28,10 @@ const _fakeUserList: any[] = [
 @Injectable()
 export class MockUserService implements UserServiceInterface {
 	public getUserList(): Observable<User[]> {
-		return Observable.of(_fakeUserList);
+		return Observable.of(fakeUserList);
 	}
 
 	public getUser(id: number): Observable<User> {
-		return Observable.of(_fakeUserList[0]);
+		return Observable.of(fakeUserList[0]);
 	}
 }
