@@ -4,8 +4,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app.routing';
 
-import { RootComponent } from './root/root.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { RootComponent } from './root';
+import { UserListComponent } from './user-list';
 import { UserDetailComponent, UserComponent } from './user-detail';
 import { SimpleComponent } from './simple';
 

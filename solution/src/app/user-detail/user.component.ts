@@ -4,7 +4,6 @@ import { User } from '../shared'
 @Component({
   selector: 'c1-user',
   template: `
-    <a [routerLink]="['/user-list']">Back to List</a>
     <h2>User #{{ user?.id }} Detail</h2>
     <span>{{ user?.name }}</span>
     <span>{{ user?.username }}</span>
